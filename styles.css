@@ -1,0 +1,152 @@
+
+        :root {
+            --primary: #2c3e50;
+            --accent: #e67e22;
+            --bg: #f4f7f6;
+            --white: #ffffff;
+            --text: #34495e;
+            --movie-red: #c0392b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: #1a1a1a;
+            color: var(--text);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            
+        }
+
+        .container {
+            width: 95vw;
+            height: 90vh;
+            background: var(--bg);
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide-wrapper {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.5s ease;
+            visibility: hidden;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+            visibility: visible;
+        }
+
+        .tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            border-left: 10px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .summary-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .movie-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .analysis-box {
+            background: #fff;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            border-radius: 10px;font-size: 1.5rem;
+        }
+
+        .analysis-box h4 {
+            color: var(--movie-red);
+            margin-bottom: 10px;
+            font-family: 'Montserrat';
+        }
+
+        .controls {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .nav-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Montserrat';
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover { background: var(--accent); }
+
+        .dots { display: flex; gap: 8px; }
+        .dot { width: 10px; height: 10px; background: #ddd; border-radius: 50%; transition: 0.3s; }
+        .dot.active { background: var(--accent); transform: scale(1.2); }
+
+        .image-placeholder {
+            width: 100%;
+            height: auto;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-style: italic;
+            color: #777;
+            text-align: center;
+            padding: 10px;
+        }
